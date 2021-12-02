@@ -1,4 +1,4 @@
-package part1_recap
+package part1recap
 
 object GeneralRecap extends App {
 
