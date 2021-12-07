@@ -152,14 +152,13 @@ object ChangingActorBehaviour extends App {
     }
   }*/
   class Citizen extends Actor{
-
-    def voted(candidate: String): Receive = {
-      case VoteStatusRequest => sender() ! VoteStatusReply(Some(candidate))
-    }
-
     override def receive: Receive = {
       case Vote(candidate)  => context.become(voted(candidate))
       case VoteStatusRequest => sender() ! VoteStatusReply(None)
+    }
+
+    def voted(candidate: String): Receive = {
+      case VoteStatusRequest => sender() ! VoteStatusReply(Some(candidate))
     }
   }
 
@@ -185,9 +184,7 @@ object ChangingActorBehaviour extends App {
   }*/
 
   class VoteAggregator extends Actor{
-    override def receive: Receive = awaitingCommand
-
-    def awaitingCommand: Receive = {
+    override def receive: Receive = {
       case AggregateVotes(citizens) =>
         citizens.foreach(_ ! VoteStatusRequest)
         context.become(awaitingStatus(citizens, Map()))
