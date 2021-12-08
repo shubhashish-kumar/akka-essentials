@@ -1,0 +1,6 @@
+{
+  "aJSONProperty": "Json Property",
+    "akka": {
+      "loglevel": "WARN"
+    }
+}
