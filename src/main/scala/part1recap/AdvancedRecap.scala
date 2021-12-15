@@ -34,7 +34,7 @@ object AdvancedRecap extends App{
     case 60 => 90000
   }
 
-  pf(5) // 999 as per partial functio,
+  pf(5) // 999 as per partial function,
   pf(60) // 90000
   pf(5000) // throw a matcher exception
 

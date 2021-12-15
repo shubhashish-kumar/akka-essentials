@@ -60,6 +60,4 @@ object IntroActorConfig extends App {
   val propsConfig = ConfigFactory.load("props/propsConfiguration.properties")
   println(s"properties config: ${propsConfig.getString("my.simpleProperty")}")
   println(s"properties config: ${propsConfig.getString("akka.loglevel")}")
-
-
 }
