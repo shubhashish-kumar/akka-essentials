@@ -5,6 +5,7 @@ import akka.testkit.{ImplicitSender, TestKit}
 import org.scalatest.{BeforeAndAfterAll, WordSpecLike}
 
 import scala.concurrent.duration._
+import scala.language.postfixOps
 import scala.util.Random
 
 class BasicSpec extends TestKit(ActorSystem("BasicSpec"))

@@ -6,6 +6,7 @@ import com.typesafe.config.ConfigFactory
 import org.scalatest.{BeforeAndAfterAll, WordSpecLike}
 
 import scala.concurrent.duration._
+import scala.language.postfixOps
 import scala.util.Random
 
 class TimedAssertionsSpec extends TestKit(
